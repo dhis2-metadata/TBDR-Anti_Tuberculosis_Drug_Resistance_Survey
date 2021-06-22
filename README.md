@@ -1,1 +1,1 @@
-# TB_DRS - Tuberculosis Drugs Resistance Survey
+# TB_DRS - Anti-Tuberculosis Drug Resistance Survey - Tracker metadata package
