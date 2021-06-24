@@ -414,17 +414,6 @@ The table below summarizes program indicators and variables displayed in the Top
 | Treatment history | Program rule | History of previous treatment based on Case Report Form (New/Previously treated) |
 | Resistance (Rif, Inh, Fq) | Program rule | Lists the drugs for which drug resistance have been detected and recorded in the NRL - DRS Samples 1-4 stages |
 
-### Feedback Widget
-
-The following feedback messages are configured to display in the Feedback Widget when certain conditions are met as outlined in the table below:
-
-| Message | Condition |
-|---|---|
-| You entered a laboratory result before the date of sample collection. Laboratory result date must be on or after sample collection date. Please check both dates. | **Error:** Date of laboratory result precedes the date of sample collection |
-| You entered a laboratory result before the date of inoculation. Laboratory result date must be on or after inoculation date. Please check both dates. | **Error:** Date of laboratory result precedes the date of inoculation |
-| Answer "Yes" has been assigned automatically. The patient is either registered for TB treatment already and/or has confirmed previous treatment for TB. | **Warning:** The previous treatment history status is assgned automatically based on the answers in the Case Report Form |
-| If initial screening is based on microscopy examination of > 2 samples then add only the 2 samples with the highest bacterial load. | **Warning:** User can only add screening data from two samples only |
-
 ### Validation
 
 The data entry forms contain several date validation checks. These include:
@@ -437,6 +426,17 @@ The data entry forms contain several date validation checks. These include:
 - Sample arrival date cannot precede shipment date
 
 Additional validation checks can be set up.
+
+### Feedback Widget
+
+The following feedback messages are configured to display in the Feedback Widget when certain conditions are met as outlined in the table below:
+
+| Message | Condition |
+|---|---|
+| You entered a laboratory result before the date of sample collection. Laboratory result date must be on or after sample collection date. Please check both dates. | **Error:** Date of laboratory result precedes the date of sample collection |
+| You entered a laboratory result before the date of inoculation. Laboratory result date must be on or after inoculation date. Please check both dates. | **Error:** Date of laboratory result precedes the date of inoculation |
+| Answer "Yes" has been assigned automatically. The patient is either registered for TB treatment already and/or has confirmed previous treatment for TB. | **Warning:** The previous treatment history status is assgned automatically based on the answers in the Case Report Form |
+| If initial screening is based on microscopy examination of > 2 samples then add only the 2 samples with the highest bacterial load. | **Warning:** User can only add screening data from two samples only |
 
 ### Analytics and Indicators
 
