@@ -21,13 +21,13 @@ The three main categories used for global surveillance are rifampicin-resistant 
 
 There has been considerable progress in increasing the coverage of DST with the global expansion of rapid molecular tools, which have allowed an increasing number of countries to transition from a reliance on periodic surveys to the establishment of continuous surveillance systems based on routine DST. Despite this progress, one third of countries still rely on conducting periodic surveys for the surveillance of drug resistance in TB, 23 of which are in the WHO’s list of 40 high TB and/or high multidrug resistant (MDR)-TB burden countries for the period 2016–2020. Conducting surveys can build and strengthen overall laboratory capacity, sample transport and referral systems, and data management expertise. All of these aspects, as well as implementation of electronic data capture systems and data connectivity solutions, support countries in transitioning to continuous surveillance of drug-resistant TB. The latter leads to improved access to timely and appropriate treatment and care, and offers programmatic benefits including rapid detection of outbreaks, real-time monitoring of the effectiveness of interventions and an understanding of trends.
 
-WHO’s “Guidance for ensuring good clinical and data management practices for national TB surveys” (2021) provides an overview of the processes and procedures for collecting, handling, cleaning, validating, analysing and storing survey records to produce high-quality survey data that are complete, reliable, timely, processed correctly, and with integrity preserved. To this end, all countries are encouraged to move towards establishing electronic systems. This document describes a fully customisable electronic data-capture tool for anti-TB DRS designed in agreement with standards and recommendations outlined in the WHO’s “Guidance for the surveillance of drug resistance in tuberculosis, 6th edition” (2021). The survey tool includes dashboards for visualisations and summaries of data, including quality and progress indicators, to facilitate the monitoring and supervision of survey activities. The user does not require expertise in database configuration and design. Implementation of this tool may help countries develop the data management skills required for the long-term implementation of electronic systems for routine surveillance of TB and drug-resistant TB.
+WHO’s "Guidance for ensuring good clinical and data management practices for national TB surveys" (2021) provides an overview of the processes and procedures for collecting, handling, cleaning, validating, analysing and storing survey records to produce high-quality survey data that are complete, reliable, timely, processed correctly, and with integrity preserved. To this end, all countries are encouraged to move towards establishing electronic systems. This document describes a fully customisable electronic data-capture tool for anti-TB DRS designed in agreement with standards and recommendations outlined in the WHO’s "Guidance for the surveillance of drug resistance in tuberculosis, 6th edition" (2021). The survey tool includes dashboards for visualisations and summaries of data, including quality and progress indicators, to facilitate the monitoring and supervision of survey activities. The user does not require expertise in database configuration and design. Implementation of this tool may help countries develop the data management skills required for the long-term implementation of electronic systems for routine surveillance of TB and drug-resistant TB.
 
 ## System Design Overview
 
 ### Use Case
 
-The TB DRS module enables registration of TB cases enrolled in a survey, and subsequent electronic data capture and tracking of laboratory tests and drug susceptibility test (DST) results for specimens submitted from each TB case to the NRL, following initial bacteriological confirmation of TB at health facilities enrolling eligible cases. The module captures a minimum set of variables required for epidemiological analysis of survey data as recommended in WHO’s “Guidance for the surveillance of drug resistance in tuberculosis, 6th edition”. These comprise clinical and socio-demographic information about the patient (including history of previous anti-TB treatment and optional additional information on potential risk factors for drug resistance in tuberculosis), laboratory tests conducted on each sample submitted for testing, and laboratory results to selected anti-TB drugs. The TB DRS module is not designed to support clinical management nor patient care. The module serves as an electronic registry and database typically supporting centralised electronic data capture at NTP and/or NRL central premises. Depending on the country’s infrastructure and resource availability, the module may be adapted to support decentralized electronic data capture at the health facility level. Parts of the module are also configured to allow data entry directly by the SRL and other external supporting partners.
+The TB DRS module enables registration of TB cases enrolled in a survey, and subsequent electronic data capture and tracking of laboratory tests and drug susceptibility test (DST) results for specimens submitted from each TB case to the NRL, following initial bacteriological confirmation of TB at health facilities enrolling eligible cases. The module captures a minimum set of variables required for epidemiological analysis of survey data as recommended in WHO’s "Guidance for the surveillance of drug resistance in tuberculosis, 6th edition". These comprise clinical and socio-demographic information about the patient (including history of previous anti-TB treatment and optional additional information on potential risk factors for drug resistance in tuberculosis), laboratory tests conducted on each sample submitted for testing, and laboratory results to selected anti-TB drugs. The TB DRS module is not designed to support clinical management nor patient care. The module serves as an electronic registry and database typically supporting centralised electronic data capture at NTP and/or NRL central premises. Depending on the country’s infrastructure and resource availability, the module may be adapted to support decentralized electronic data capture at the health facility level. Parts of the module are also configured to allow data entry directly by the SRL and other external supporting partners.
 
 The sampling strategy and the diagnostic algorithm of choice for an anti-TB DRS will vary depending on the country. A survey diagnostic algorithm often combines several phenotypic and/or molecular techniques for  DST of a range of drugs selected by the country. The TB DRS module currently considers the two most common survey designs (either exhaustive sampling of all health facilities in the country or cluster sampling) and all the WHO-recommended laboratory diagnostic techniques for DST. Users can adapt the TB DRS module to fit their needs by selecting the survey design and the laboratory tests applicable to their survey. This includes configuration of the diagnostic test/s used at health facilities for the initial bacteriological confirmation of TB, and configuration of the numbers of sputum samples submitted to the NRL for further testing. Configuration of mixed survey designs in cases of stratified sampling are also possible. The specific anti-TB drugs to be included are also fully customisable.
 
@@ -60,14 +60,14 @@ In order to enter laboratory test results, it is a prerequisite that the TB case
 
 ### Case Report Form
 
-Case Report Form design is based on the “Example Clinical Information Form” from the [WHO Guidelines for surveillance of drug resistance in tuberculosis, 6th edition](https://apps.who.int/iris/bitstream/handle/10665/174897/9789241549134_eng.pdf?sequence=1). It is set-up for both secondary data entry (based on a paper form) and direct data entry during live interview. It captures:
+Case Report Form design is based on the "Example Clinical Information Form" from the [WHO Guidelines for surveillance of drug resistance in tuberculosis, 6th edition](https://apps.who.int/iris/bitstream/handle/10665/174897/9789241549134_eng.pdf?sequence=1). It is set-up for both secondary data entry (based on a paper form) and direct data entry during live interview. It captures:
 
-1. Patient’s HIV status;
-2. Initial screening results: bacteriological confirmation of TB either by sputum smear microscopy, Xpert MTB/RIF, or both tests. Initial screening test/s is/are configured during initial setup in the Maintenance App. NB  If initial screening is based on microscopy examination of > 2 samples, only 2 samples with the highest bacterial load are entered.;
-3. Treatment history provided by patient (if the patient does not remember earlier TB treatment, control questions are asked);
-4. Treatment history based on medical records;
-5. Final treatment history decision;
-6. Name of the officer responsible for completing the form.
+- Patient’s HIV status;
+- Initial screening results: bacteriological confirmation of TB either by sputum smear microscopy, Xpert MTB/RIF, or both tests. Initial screening test/s is/are configured during initial setup in the Maintenance App. NB  If initial screening is based on microscopy examination of > 2 samples, only 2 samples with the highest bacterial load are entered.;
+- Treatment history provided by patient (if the patient does not remember earlier TB treatment, control questions are asked);
+- Treatment history based on medical records;
+- Final treatment history decision;
+- Name of the officer responsible for completing the form.
 
 Key data is displayed in the top bar of the DHIS2 DR-TB Case-based Surveillance Tracker Capture Interface.
 If the patient is already enrolled in the DR-TB Case Surveillance Tracker, relevant data such as TB Registration Number may be automatically imported into the TB DRS Module.
@@ -78,7 +78,7 @@ If the patient is already enrolled in the DR-TB Case Surveillance Tracker, relev
 
 The number of samples shipped to the NRL is defined in the initial configuration. It may vary from 1 to 4 (see Initial Configuration: Constants). The program is designed to collect data about all shipped samples. Data for each sample is entered in the corresponding program stage. The Collection and Shipment Form captures collection dates for samples, any additives, date of sample shipment to NRL, date of arrival and any related comments and remarks.
 
-Additive options: none; CPC; Ethanol; PrimeStore; Other. Option “Other” has to be specified in a separate field. DRS Sample IDs are generated according to the following standard: Patient DRS ID / [Sample Nr] Sample numbers are 1,2,3 or 4.
+Additive options: none; CPC; Ethanol; PrimeStore; Other. Option "Other" has to be specified in a separate field. DRS Sample IDs are generated according to the following standard: Patient DRS ID / [Sample Nr] Sample numbers are 1,2,3 or 4.
 
 Optional functionality: When the module is used for direct data entry, notifications can be sent to NRLs in case data capture in the form DRS Sample Processing at NRL is taking place at NRLs. (to be configured separately).
 
@@ -94,19 +94,19 @@ NRL – DRS Sample 1 – 4 Program Stages are used to capture key data related t
 
 Each country uses different tests at the NRL level. TB DRS module includes the following tests:
 
-1. Sputum smear microscopy
-2. Xpert MTB/RIF
-3. Xpert MTB/RIF Ultra
-4. Culture in solid media (e.g. LJ)
-5. Culture in liquid media (e.g. MGIT)
-6. Initial phenotypic DST in solid media (e.g. LJ)
-7. Initial phenotypic DST in liquid media (e.g. MGIT)
-8. Subsequent phenotypic DST in solid media (e.g. LJ)
-9. Subsequent phenotypic DST in liquid media (e.g. MGIT)
-10. LPA (Rifampicin/Isoniazid)
-11. LPA (Fluoroquinolones/Second-line Injectables)
-12. Targeted Gene Sequencing
-13. Whole Genome Sequencing
+- Sputum smear microscopy
+- Xpert MTB/RIF
+- Xpert MTB/RIF Ultra
+- Culture in solid media (e.g. LJ)
+- Culture in liquid media (e.g. MGIT)
+- Initial phenotypic DST in solid media (e.g. LJ)
+- Initial phenotypic DST in liquid media (e.g. MGIT)
+- Subsequent phenotypic DST in solid media (e.g. LJ)
+- Subsequent phenotypic DST in liquid media (e.g. MGIT)
+- LPA (Rifampicin/Isoniazid)
+- LPA (Fluoroquinolones/Second-line Injectables)
+- Targeted Gene Sequencing
+- Whole Genome Sequencing
 
 The tests used for sample processing by the country’s NRLs are selected in the Maintenance App during the initial configuration of the program.
 
@@ -233,7 +233,7 @@ In addition, the program captures whether the sample was rejected or lost or whe
 
 - Date of results, genotypic speciation results and genotypic resistance profiling for tested drugs (if MTB complex (MTBc) was detected and interpretable genetic resistance profiling is available) are captured.
 - Genotypic Speciation Results: MTBc; Mixed MTBc and Other; NTM; Contamination; Failed
-- In case “Failed” is selected, reasons for failure have to be provided.
+- In case "Failed" is selected, reasons for failure have to be provided.
 - List of drugs available for Genotypic Resistance Profiling: Rifampicin, Isoniazid, Pyrazinamide, Ethambutol, Fluoroquinolones, Amikacin, Ethionamide, Bedaquiline, Delamanid, Linezolid, Clofazimine, Pretomanid
 - Final Result Options: Resistant; Susceptible; No Interpretable Result (i.e. insufficient quality); Indeterminate (i.e. mutation unknown / not graded)
 
@@ -242,7 +242,7 @@ In addition, the program captures whether the sample was rejected or lost or whe
 #### Whole Genome Sequencing
 
 - Date of results, genotypic speciation results and genotypic resistance profiling for tested drugs (if MTB complex (MTBc) was detected and interpretable genetic resistance profiling is available) are captured.
-- Genotypic Speciation Results: MTBc; Mixed MTBc and Other; NTM; Contamination; Failed In case “Failed” is selected, reasons for failure have to be provided.
+- Genotypic Speciation Results: MTBc; Mixed MTBc and Other; NTM; Contamination; Failed In case "Failed" is selected, reasons for failure have to be provided.
 - List of drugs available for Genotypic Resistance Profiling: Rifampicin, Isoniazid, Pyrazinamide, Ethambutol, Fluoroquinolones, Amikacin, Ethionamide, Bedaquiline, Delamanid, Linezolid, Clofazimine, Pretomanid
 - Final Result Options: Resistant; Susceptible; No Interpretable Result (i.e. insufficient quality); Indeterminate (i.e. mutation unknown / not graded)
 
@@ -250,7 +250,7 @@ In addition, the program captures whether the sample was rejected or lost or whe
 
 #### Storage Only
 
-- If the sample is stored, the “Storage Only” checkbox is selected. Program stage may be completed.
+- If the sample is stored, the "Storage Only" checkbox is selected. Program stage may be completed.
 
 #### Comments and Remarks
 
@@ -262,13 +262,13 @@ This program stage can be added to Data Entry Forms if the samples are sent to a
 
 ### Patient DRS ID
 
-Data entry options for Patient DRS ID: For exhaustive sampling of all health facilities, Patient DRS ID is generated using a predefined 3-letter facility code and a serial number to identify patient (formatted to 3 digits)
+Data entry options for Patient DRS ID: For exhaustive sampling of all health facilities, Patient DRS ID is generated using a predefined 3-letter facility code and a serial number to identify the patient (formatted to 3 digits)
 
 - CAD/001
 - CAD/002
 - Etc.
 
-For Cluster sampling, Patient DRS ID is generated using a predefined 3-letter facility code, Cluster ID (formatted to 3 digits) and a serial number to identify patient (formatted to 3 digits)
+For Cluster sampling, Cluster ID, which is a separate Tracked Entity Attribute is added to the generated Patient DRS ID. The Attribute in the enrollments stage still consists of the Facility code and a serial number. All DRS Sample IDs are generated using a predefined 3-letter facility code, Cluster ID (formatted to 3 digits) and a serial number to identify the patient (formatted to 3 digits)
 
 - CAD/002/001
 - CAD/002/002
@@ -284,7 +284,7 @@ Configure whether the country is using Cluster Sampling or Exhaustive Sampling o
 
 | Constant | Settings | UID |
 |---|---|---|
-| TB-DRS: Cluster Sampling | Value “1” = Include Cluster Sampling for DRS. <br> Value “2” = Exclude Cluster Sampling from DRS. | aYPQMlxAZsz |
+| Cluster Sampling | Value "1" = Include Cluster Sampling for DRS. <br> Value "0" = Exclude Cluster Sampling from DRS. | aYPQMlxAZsz |
 
 #### Number of DRS Samples sent to NRL
 
@@ -292,9 +292,9 @@ Configure the number of samples are sent to NRL processing
 
 | Constant | Settings | UID |
 |---|---|---|
-| TB-DRS: Sample 2 for NRL Processing | Value "1" = Add DRS Sample 2 collected for NRL processing to program configuration <br> Value "2" = Remove DRS Sample 2 from program configuration | rSS2dY6gwLJ |
-| TB-DRS: Sample 3 for NRL Processing | Value "1" = Add DRS Sample 3 collected for NRL processing to program configuration <br> Value "2" = Remove DRS Sample 3 from program configuration | sqgp1l0s4wp |
-| TB-DRS: Sample 4 for NRL Processing | Value "1" = Add DRS Sample 4 collected for NRL processing to program configuration <br> Value "2" = Remove DRS Sample 4 from program configuration | NXr7RH56Q1R |
+| Sample 2 for NRL Processing | Value "1" = Add DRS Sample 2 collected for NRL processing to program configuration <br> Value "0" = Remove DRS Sample 2 from program configuration | rSS2dY6gwLJ |
+| Sample 3 for NRL Processing | Value "1" = Add DRS Sample 3 collected for NRL processing to program configuration <br> Value "0" = Remove DRS Sample 3 from program configuration | sqgp1l0s4wp |
+| Sample 4 for NRL Processing | Value "1" = Add DRS Sample 4 collected for NRL processing to program configuration <br> Value "0" = Remove DRS Sample 4 from program configuration | NXr7RH56Q1R |
 
 #### Initial Screening Tests
 
@@ -302,7 +302,7 @@ Configure which initial screening tests are used for bacteriological confirmatio
 
 | Constant | Settings | UID |
 |---|---|---|
-| TB-DRS: Bacteriological Confirmation of TB | Value “1” = Include both "Sputum Smear Microscopy" and "Xpert MTB/RIF" for Bacteriological Confirmation of TB. <br> Value “2” = Include only "Sputum smear microscopy" for Bacteriological Confirmation of TB. <br> Value “3” = Include only "Xpert MTB/RIF" for Bacteriological Confirmation of TB. | gYj2CUoep4O |
+| Bacteriological Confirmation of TB | Value "1" = Include both "Sputum Smear Microscopy" and "Xpert MTB/RIF" for Bacteriological Confirmation of TB. <br> Value "2" = Include only "Sputum smear microscopy" for Bacteriological Confirmation of TB. <br> Value "3" = Include only "Xpert MTB/RIF" for Bacteriological Confirmation of TB. | gYj2CUoep4O |
 
 #### SRL Sample Processing
 
@@ -310,107 +310,107 @@ Configure whether the country has an option of sending samples to SRL (supranati
 
 | Constant | Settings | UID |
 |---|---|---|
-| TB-DRS: SRL | Value “1” = include an option of sending Samples to SRL <br> Value “2” = exclude an option of sending Samples to SRL | AUltNkQXzdm |
+| SRL | Value "1" = include an option of sending Samples to SRL <br> Value "0" = exclude an option of sending Samples to SRL | AUltNkQXzdm |
 
 #### Tests at NRL
 
 | Constant | Settings | UID |
 |---|---|---|
-| TB-Lab: Sputum Smear Microscopy | Value “1” = include Sputum Smear Microscopy in the list of tests. <br> Value "2" = exclude Sputum Smear Microscopy from the list of tests. | q1ah12sKfG3 |
-| TB-Lab: Culture in Solid Media (e.g. LJ) | Value “1” = include Culture in Solid Media (e.g. LG) in the list of tests. <br> Value "2" = exclude Culture in Solid Media (e.g. LG) from the list of tests. | iSKEqcuVAui |
-| TB-Lab: Culture in Liquid Media (e.g. MGIT) | Value “1” = include Culture in Liquid Media (e.g. MGIT) in the list of tests. <br> Value "2" = exclude Culture in Liquid Media (e.g. MGIT) from the list of tests. | qpAseG5vJyS |
-| TB-Lab: Xpert MTB/RIF | Value “1” = include Xpert MTB/RIF in the list of tests. <br> Value "2" = exclude Xpert MTB/RIF from the list of tests. | H4ObQDbhnTA |
-| TB-Lab: Xpert MTB/RIF Ultra | Value “1” = include Xpert MTB/RIF Ultra in the list of tests. <br> Value "2" = exclude Xpert MTB/RIF Ultra from the list of tests. | cFoFDkXKcXC |
-| TB-Lab: Initial Phenotypic DST in Solid Media (eg. LJ) | Value "1" = include Initial Phenotypic DST in Solid Media (eg. LJ) in the list of tests. <br> Value "2" = exclude Initial Phenotypic DST in Solid Media (eg. LJ) from the list of tests. | HjN2Bgnusyy |
-| TB-Lab: Initial Phenotypic DST in Liquid Media (eg. MGIT) | Value "1" = include Initial Phenotypic DST in Liquid Media (eg. MGIT) in the list of tests. <br> Value "2" = exclude Initial Phenotypic DST in Liquid Media (eg. MGIT) from the list of tests. | OQxeAIyQUeB |
-| TB-Lab: Subsequent Phenotypic DST in Solid Media (eg. LJ) | Value "1" = include Subsequent Phenotypic DST in Solid Media (eg. LJ) in the list of tests. <br> Value "2" = exclude Subsequent Phenotypic DST in Solid Media (eg. LJ) from the list of tests. | BpRfvWQcvTo |
-| TB-Lab: LPA (Rif/Inh) | Value "1" = include LPA (Rif/Inh) in the list of tests. <br> Value "2" = exclude LPA (Rif/Inh) from the list of tests. | ESUffSPwmju |
-| TB-Lab: LPA (Fq/2LI) | Value "1" = include LPA (Fq/2LI) in the list of tests. <br> Value "2" = exclude LPA (Fq/2LI) from the list of tests. | govArZqiFzY |
-| TB-Lab: Subsequent Phenotypic DST in Liquid Media (eg. MGIT) | Value "1" = include Subsequent Phenotypic DST in Liquid Media (eg. MGIT) in the list of tests. <br> Value "2" = exclude Subsequent Phenotypic DST in Liquid Media (eg. MGIT) from the list of tests. | W8Fm1pJuJPL |
-| TB-Lab: Targeted Gene Sequencing | Value "1" = include Targeted Gene Sequencing in the list of tests. <br> Value "2" = exclude Targeted Gene Sequencing from the list of tests. | KkypNdLNW1f |
-| TB-Lab: Whole Genome Sequencing | Value "1" = include WGS in the list of tests. <br> Value "2" = exclude WGS from the list of tests. | MC7QUDr9YKC |
+| Sputum Smear Microscopy | Value "1" = include Sputum Smear Microscopy in the list of tests. <br> Value "0" = exclude Sputum Smear Microscopy from the list of tests. | q1ah12sKfG3 |
+| Culture in Solid Media (e.g. LJ) | Value "1" = include Culture in Solid Media (e.g. LG) in the list of tests. <br> Value "0" = exclude Culture in Solid Media (e.g. LG) from the list of tests. | iSKEqcuVAui |
+| Culture in Liquid Media (e.g. MGIT) | Value "1" = include Culture in Liquid Media (e.g. MGIT) in the list of tests. <br> Value "0" = exclude Culture in Liquid Media (e.g. MGIT) from the list of tests. | qpAseG5vJyS |
+| Xpert MTB/RIF | Value "1" = include Xpert MTB/RIF in the list of tests. <br> Value "0" = exclude Xpert MTB/RIF from the list of tests. | H4ObQDbhnTA |
+| Xpert MTB/RIF Ultra | Value "1" = include Xpert MTB/RIF Ultra in the list of tests. <br> Value "0" = exclude Xpert MTB/RIF Ultra from the list of tests. | cFoFDkXKcXC |
+| Initial Phenotypic DST in Solid Media (eg. LJ) | Value "1" = include Initial Phenotypic DST in Solid Media (eg. LJ) in the list of tests. <br> Value "0" = exclude Initial Phenotypic DST in Solid Media (eg. LJ) from the list of tests. | HjN2Bgnusyy |
+| Initial Phenotypic DST in Liquid Media (eg. MGIT) | Value "1" = include Initial Phenotypic DST in Liquid Media (eg. MGIT) in the list of tests. <br> Value "0" = exclude Initial Phenotypic DST in Liquid Media (eg. MGIT) from the list of tests. | OQxeAIyQUeB |
+| Subsequent Phenotypic DST in Solid Media (eg. LJ) | Value "1" = include Subsequent Phenotypic DST in Solid Media (eg. LJ) in the list of tests. <br> Value "0" = exclude Subsequent Phenotypic DST in Solid Media (eg. LJ) from the list of tests. | BpRfvWQcvTo |
+| LPA (Rif/Inh) | Value "1" = include LPA (Rif/Inh) in the list of tests. <br> Value "0" = exclude LPA (Rif/Inh) from the list of tests. | ESUffSPwmju |
+| LPA (Fq/2LI) | Value "1" = include LPA (Fq/2LI) in the list of tests. <br> Value "0" = exclude LPA (Fq/2LI) from the list of tests. | govArZqiFzY |
+| Subsequent Phenotypic DST in Liquid Media (eg. MGIT) | Value "1" = include Subsequent Phenotypic DST in Liquid Media (eg. MGIT) in the list of tests. <br> Value "0" = exclude Subsequent Phenotypic DST in Liquid Media (eg. MGIT) from the list of tests. | W8Fm1pJuJPL |
+| Targeted Gene Sequencing | Value "1" = include Targeted Gene Sequencing in the list of tests. <br> Value "0" = exclude Targeted Gene Sequencing from the list of tests. | KkypNdLNW1f |
+| Whole Genome Sequencing | Value "1" = include WGS in the list of tests. <br> Value "0" = exclude WGS from the list of tests. | MC7QUDr9YKC |
 
 #### List of Available Drugs
 
 | Initial Phenotypic DST in Solid Media (eg. LJ) |||
 |---|---|---|
 | Constant | Settings | UID |
-| TB-Drugs: Initial Phenotypic DST in Solid Media - Rifampicin | Value "1" = include Rifampicin in the list of drugs available for Initial Phenotypic DST testing in solid media. <br> Value "2" = exclude Rifampicin from the list of drugs available for Initial Phenotypic DST testing in solid media. | Q67DDsupq7v |
-| TB-Drugs: Initial Phenotypic DST in Solid Media - Isoniazid (CC) | Value "1" = include Isoniazid (CC) in the list of drugs available for Initial Phenotypic DST testing in solid media. <br> Value "2" = exclude Isoniazid (CC) from the list of drugs available for Initial Phenotypic DST testing in solid media. | dAPAScvFPfX |
-| TB-Drugs: Initial Phenotypic DST in Solid Media - Isoniazid (CB) | Value "1" = include Isoniazid (CB) in the list of drugs available for Initial Phenotypic DST testing in solid media. <br> Value "2" = exclude Isoniazid (CB) from the list of drugs available for Initial Phenotypic DST testing in solid media. | anpSc1tmlft |
-| TB-Drugs: Initial Phenotypic DST in Solid Media - Pyrazinamide | Value "1" = include Pyrazinamide in the list of drugs available for Initial Phenotypic DST testing in solid media. <br> Value "2" = exclude Pyrazinamide from the list of drugs available for Initial Phenotypic DST testing in solid media. <br> Pyrazinamide can only be tested using liquid media. | aCaNdqUIDZl |
-| TB-Drugs: Initial Phenotypic DST in Solid Media - Ethambutol | Value "1" = include Ethambutol in the list of drugs available for Initial Phenotypic DST testing in solid media. <br> Value "2" = exclude Ethambutol from the list of drugs available for Initial Phenotypic DST testing in solid media. | yxPHZFwMTN6 |
-| TB-Drugs: Initial Phenotypic DST in Solid Media - Levofloxacin | Value "1" = include Levofloxacin in the list of drugs available for Initial Phenotypic DST testing in solid media. <br> Value "2" = exclude Levofloxacin from the list of drugs available for Initial Phenotypic DST testing in solid media. | NlOX3oV4gWe |
-| TB-Drugs: Initial Phenotypic DST in Solid Media - Moxifloxacin (CC) | Value "1" = include Moxifloxacin (CC) in the list of drugs available for Initial Phenotypic DST testing in solid media. <br> Value "2" = exclude Moxifloxacin (CC) from the list of drugs available for Initial Phenotypic DST testing in solid media. | RJNE1o9cw7Y |
-| TB-Drugs: Initial Phenotypic DST in Solid Media - Moxifloxacin (CB) | Value "1" = include Moxifloxacin (CB) in the list of drugs available for Initial Phenotypic DST testing in solid media. <br> Value "2" = exclude Moxifloxacin (CB) from the list of drugs available for Initial Phenotypic DST testing in solid media. | m4c79OHEKCG |
-| TB-Drugs: Initial Phenotypic DST in Solid Media - Amikacin | Value "1" = include Amikacin in the list of drugs available for Initial Phenotypic DST testing in solid media. <br> Value "2" = exclude Amikacin from the list of drugs available for Initial Phenotypic DST testing in solid media. | XO1V9o5C95J |
-| TB-Drugs: Initial Phenotypic DST in Solid Media - Bedaquiline | Value "1" = include Bedaquiline in the list of drugs available for Initial Phenotypic DST testing in solid media. <br> Value "2" = exclude Bedaquiline from the list of drugs available for Initial Phenotypic DST testing in solid media. | UxcTzMRQsfa |
-| TB-Drugs: Initial Phenotypic DST in Solid Media - Delamanid | Value "1" = include Delamanid in the list of drugs available for Initial Phenotypic DST testing in solid media. <br> Value "2" = exclude Delamanid from the list of drugs available for Initial Phenotypic DST testing in solid media. | VUlsMrm4D8k |
-| TB-Drugs: Initial Phenotypic DST in Solid Media - Linezolid | Value "1" = include Linezolid in the list of drugs available for Initial Phenotypic DST testing in solid media. <br> Value "2" = exclude Linezolid from the list of drugs available for Initial Phenotypic DST testing in solid media. | CVQR2ZtZWxk |
-| TB-Drugs: Initial Phenotypic DST in Solid Media - Clofazimine | Value "1" = include Clofazimine in the list of drugs available for Initial Phenotypic DST testing in solid media. <br> Value "2" = exclude Clofazimine from the list of drugs available for Initial Phenotypic DST testing in solid media. <br> Clofazimine can only be tested using liquid media. | ZDpLleSK08x |
+| Initial Phenotypic DST in Solid Media - Rifampicin | Value "1" = include Rifampicin in the list of drugs available for Initial Phenotypic DST testing in solid media. <br> Value "0" = exclude Rifampicin from the list of drugs available for Initial Phenotypic DST testing in solid media. | Q67DDsupq7v |
+| Initial Phenotypic DST in Solid Media - Isoniazid (CC) | Value "1" = include Isoniazid (CC) in the list of drugs available for Initial Phenotypic DST testing in solid media. <br> Value "0" = exclude Isoniazid (CC) from the list of drugs available for Initial Phenotypic DST testing in solid media. | dAPAScvFPfX |
+| Initial Phenotypic DST in Solid Media - Isoniazid (CB) | Value "1" = include Isoniazid (CB) in the list of drugs available for Initial Phenotypic DST testing in solid media. <br> Value "0" = exclude Isoniazid (CB) from the list of drugs available for Initial Phenotypic DST testing in solid media. | anpSc1tmlft |
+| Initial Phenotypic DST in Solid Media - Pyrazinamide | Value "1" = include Pyrazinamide in the list of drugs available for Initial Phenotypic DST testing in solid media. <br> Value "0" = exclude Pyrazinamide from the list of drugs available for Initial Phenotypic DST testing in solid media. <br> Pyrazinamide can only be tested using liquid media. | aCaNdqUIDZl |
+| Initial Phenotypic DST in Solid Media - Ethambutol | Value "1" = include Ethambutol in the list of drugs available for Initial Phenotypic DST testing in solid media. <br> Value "0" = exclude Ethambutol from the list of drugs available for Initial Phenotypic DST testing in solid media. | yxPHZFwMTN6 |
+| Initial Phenotypic DST in Solid Media - Levofloxacin | Value "1" = include Levofloxacin in the list of drugs available for Initial Phenotypic DST testing in solid media. <br> Value "0" = exclude Levofloxacin from the list of drugs available for Initial Phenotypic DST testing in solid media. | NlOX3oV4gWe |
+| Initial Phenotypic DST in Solid Media - Moxifloxacin (CC) | Value "1" = include Moxifloxacin (CC) in the list of drugs available for Initial Phenotypic DST testing in solid media. <br> Value "0" = exclude Moxifloxacin (CC) from the list of drugs available for Initial Phenotypic DST testing in solid media. | RJNE1o9cw7Y |
+| Initial Phenotypic DST in Solid Media - Moxifloxacin (CB) | Value "1" = include Moxifloxacin (CB) in the list of drugs available for Initial Phenotypic DST testing in solid media. <br> Value "0" = exclude Moxifloxacin (CB) from the list of drugs available for Initial Phenotypic DST testing in solid media. | m4c79OHEKCG |
+| Initial Phenotypic DST in Solid Media - Amikacin | Value "1" = include Amikacin in the list of drugs available for Initial Phenotypic DST testing in solid media. <br> Value "0" = exclude Amikacin from the list of drugs available for Initial Phenotypic DST testing in solid media. | XO1V9o5C95J |
+| Initial Phenotypic DST in Solid Media - Bedaquiline | Value "1" = include Bedaquiline in the list of drugs available for Initial Phenotypic DST testing in solid media. <br> Value "0" = exclude Bedaquiline from the list of drugs available for Initial Phenotypic DST testing in solid media. | UxcTzMRQsfa |
+| Initial Phenotypic DST in Solid Media - Delamanid | Value "1" = include Delamanid in the list of drugs available for Initial Phenotypic DST testing in solid media. <br> Value "0" = exclude Delamanid from the list of drugs available for Initial Phenotypic DST testing in solid media. | VUlsMrm4D8k |
+| Initial Phenotypic DST in Solid Media - Linezolid | Value "1" = include Linezolid in the list of drugs available for Initial Phenotypic DST testing in solid media. <br> Value "0" = exclude Linezolid from the list of drugs available for Initial Phenotypic DST testing in solid media. | CVQR2ZtZWxk |
+| Initial Phenotypic DST in Solid Media - Clofazimine | Value "1" = include Clofazimine in the list of drugs available for Initial Phenotypic DST testing in solid media. <br> Value "0" = exclude Clofazimine from the list of drugs available for Initial Phenotypic DST testing in solid media. <br> Clofazimine can only be tested using liquid media. | ZDpLleSK08x |
 
 | Initial Phenotypic DST in Liquid Media (eg. MGIT) |||
 |---|---|---|
-| TB-Drugs: Initial Phenotypic DST in Liquid Media - Rifampicin | Value "1" = include Rifampicin in the list of drugs available for Initial Phenotypic DST testing in liquid media. <br> Value "2" = exclude Rifampicin from the list of drugs available for Initial Phenotypic DST testing in liquid media. | uOJYEwV7XfN |
-| TB-Drugs: Initial Phenotypic DST in Liquid Media - Isoniazid (CC) | Value "1" = include Isoniazid (CC) in the list of drugs available for Initial Phenotypic DST testing in liquid media. <br> Value "2" = exclude Isoniazid (CC) from the list of drugs available for Initial Phenotypic DST testing in liquid media. | cRldkiBh5xv |
-| TB-Drugs: Initial Phenotypic DST in Liquid Media - Isoniazid (CB) | Value "1" = include Isoniazid (CB) in the list of drugs available for Initial Phenotypic DST testing in liquid media. <br> Value "2" = exclude Isoniazid (CB) from the list of drugs available for Initial Phenotypic DST testing in liquid media. | lqaf0KfpHGd |
-| TB-Drugs: Initial Phenotypic DST in Liquid Media - Pyrazinamide | Value "1" = include Pyrazinamide in the list of drugs available for Initial Phenotypic DST testing in liquid media. <br> Value "2" = exclude Pyrazinamide from the list of drugs available for Initial Phenotypic DST testing in liquid media. | FDtk4otxDse |
-| TB-Drugs: Initial Phenotypic DST in Liquid Media - Ethambutol | Value "1" = include Ethambutol in the list of drugs available for Initial Phenotypic DST testing in liquid media. <br> Value "2" = exclude Ethambutol from the list of drugs available for Initial Phenotypic DST testing in liquid media. | n9zOOsLO0QP |
-| TB-Drugs: Initial Phenotypic DST in Liquid Media - Levofloxacin | Value "1" = include Levofloxacin in the list of drugs available for Initial Phenotypic DST testing in liquid media. <br> Value "2" = exclude Levofloxacin from the list of drugs available for Initial Phenotypic DST testing in liquid media. | t7Okdm8VgDV |
-| TB-Drugs: Initial Phenotypic DST in Liquid Media - Moxifloxacin (CC) | Value "1" = include Moxifloxacin (CC) in the list of drugs available for Initial Phenotypic DST testing in liquid media. <br> Value "2" = exclude Moxifloxacin (CC) from the list of drugs available for Initial Phenotypic DST testing in liquid media. | dgjpdQO2Iva |
-| TB-Drugs: Initial Phenotypic DST in Liquid Media - Moxifloxacin (CB) | Value "1" = include Moxifloxacin (CB) in the list of drugs available for Initial Phenotypic DST testing in liquid media. <br> Value "2" = exclude Moxifloxacin (CB) from the list of drugs available for Initial Phenotypic DST testing in liquid media. | UL61U78GWCg |
-| TB-Drugs: Initial Phenotypic DST in Liquid Media - Amikacin | Value "1" = include Amikacin in the list of drugs available for Initial Phenotypic DST testing in liquid media. <br> Value "2" = exclude Amikacin from the list of drugs available for Initial Phenotypic DST testing in liquid media. | x6v8O6EZo0U |
-| TB-Drugs: Initial Phenotypic DST in Liquid Media - Bedaquiline | Value "1" = include Bedaquiline in the list of drugs available for Initial Phenotypic DST testing in liquid media. <br> Value "2" = exclude Bedaquiline from the list of drugs available for Initial Phenotypic DST testing in liquid media. | KjvwSybuWJU |
-| TB-Drugs: Initial Phenotypic DST in Liquid Media - Delamanid | Value "1" = include Delamanid in the list of drugs available for Initial Phenotypic DST testing in liquid media. <br> Value "2" = exclude Delamanid from the list of drugs available for Initial Phenotypic DST testing in liquid media. | BJTzi3WWjhT |
-| TB-Drugs: Initial Phenotypic DST in Liquid Media - Linezolid | Value "1" = include Linezolid in the list of drugs available for Initial Phenotypic DST testing in liquid media. <br> Value "2" = exclude Linezolid from the list of drugs available for Initial Phenotypic DST testing in liquid media. | aZq11UuXPP6 |
-| TB-Drugs: Initial Phenotypic DST in Liquid Media - Clofazimine | Value "1" = include Clofazimine in the list of drugs available for Initial Phenotypic DST testing in liquid media. <br> Value "2" = exclude Clofazimine from the list of drugs available for Initial Phenotypic DST testing in liquid media. | GL5JTtBvbEC |
+| Initial Phenotypic DST in Liquid Media - Rifampicin | Value "1" = include Rifampicin in the list of drugs available for Initial Phenotypic DST testing in liquid media. <br> Value "0" = exclude Rifampicin from the list of drugs available for Initial Phenotypic DST testing in liquid media. | uOJYEwV7XfN |
+| Initial Phenotypic DST in Liquid Media - Isoniazid (CC) | Value "1" = include Isoniazid (CC) in the list of drugs available for Initial Phenotypic DST testing in liquid media. <br> Value "0" = exclude Isoniazid (CC) from the list of drugs available for Initial Phenotypic DST testing in liquid media. | cRldkiBh5xv |
+| Initial Phenotypic DST in Liquid Media - Isoniazid (CB) | Value "1" = include Isoniazid (CB) in the list of drugs available for Initial Phenotypic DST testing in liquid media. <br> Value "0" = exclude Isoniazid (CB) from the list of drugs available for Initial Phenotypic DST testing in liquid media. | lqaf0KfpHGd |
+| Initial Phenotypic DST in Liquid Media - Pyrazinamide | Value "1" = include Pyrazinamide in the list of drugs available for Initial Phenotypic DST testing in liquid media. <br> Value "0" = exclude Pyrazinamide from the list of drugs available for Initial Phenotypic DST testing in liquid media. | FDtk4otxDse |
+| Initial Phenotypic DST in Liquid Media - Ethambutol | Value "1" = include Ethambutol in the list of drugs available for Initial Phenotypic DST testing in liquid media. <br> Value "0" = exclude Ethambutol from the list of drugs available for Initial Phenotypic DST testing in liquid media. | n9zOOsLO0QP |
+| Initial Phenotypic DST in Liquid Media - Levofloxacin | Value "1" = include Levofloxacin in the list of drugs available for Initial Phenotypic DST testing in liquid media. <br> Value "0" = exclude Levofloxacin from the list of drugs available for Initial Phenotypic DST testing in liquid media. | t7Okdm8VgDV |
+| Initial Phenotypic DST in Liquid Media - Moxifloxacin (CC) | Value "1" = include Moxifloxacin (CC) in the list of drugs available for Initial Phenotypic DST testing in liquid media. <br> Value "0" = exclude Moxifloxacin (CC) from the list of drugs available for Initial Phenotypic DST testing in liquid media. | dgjpdQO2Iva |
+| Initial Phenotypic DST in Liquid Media - Moxifloxacin (CB) | Value "1" = include Moxifloxacin (CB) in the list of drugs available for Initial Phenotypic DST testing in liquid media. <br> Value "0" = exclude Moxifloxacin (CB) from the list of drugs available for Initial Phenotypic DST testing in liquid media. | UL61U78GWCg |
+| Initial Phenotypic DST in Liquid Media - Amikacin | Value "1" = include Amikacin in the list of drugs available for Initial Phenotypic DST testing in liquid media. <br> Value "0" = exclude Amikacin from the list of drugs available for Initial Phenotypic DST testing in liquid media. | x6v8O6EZo0U |
+| Initial Phenotypic DST in Liquid Media - Bedaquiline | Value "1" = include Bedaquiline in the list of drugs available for Initial Phenotypic DST testing in liquid media. <br> Value "0" = exclude Bedaquiline from the list of drugs available for Initial Phenotypic DST testing in liquid media. | KjvwSybuWJU |
+| Initial Phenotypic DST in Liquid Media - Delamanid | Value "1" = include Delamanid in the list of drugs available for Initial Phenotypic DST testing in liquid media. <br> Value "0" = exclude Delamanid from the list of drugs available for Initial Phenotypic DST testing in liquid media. | BJTzi3WWjhT |
+| Initial Phenotypic DST in Liquid Media - Linezolid | Value "1" = include Linezolid in the list of drugs available for Initial Phenotypic DST testing in liquid media. <br> Value "0" = exclude Linezolid from the list of drugs available for Initial Phenotypic DST testing in liquid media. | aZq11UuXPP6 |
+| Initial Phenotypic DST in Liquid Media - Clofazimine | Value "1" = include Clofazimine in the list of drugs available for Initial Phenotypic DST testing in liquid media. <br> Value "0" = exclude Clofazimine from the list of drugs available for Initial Phenotypic DST testing in liquid media. | GL5JTtBvbEC |
 
 | Subsequent Phenotypic DST in Solid Media (eg. LJ) |||
 |---|---|---|
 | Constant | Settings | UID |
-| TB-Drugs: Subsequent Phenotypic DST in Solid Media - Rifampicin | Value "1" = include Rifampicin in the list of drugs available for Subsequent Phenotypic DST testing in solid media. <br> Value "2" = exclude Rifampicin from the list of drugs available for Subsequent Phenotypic DST testing in solid media. | zJoEjvstp2d |
-| TB-Drugs: Subsequent Phenotypic DST in Solid Media - Isoniazid (CC) | Value "1" = include Isoniazid (CC) in the list of drugs available for Subsequent Phenotypic DST testing in solid media. <br> Value "2" = exclude Isoniazid (CC) from the list of drugs available for Subsequent Phenotypic DST testing in solid media. | eM3UfUO7W8O |
-| TB-Drugs: Subsequent Phenotypic DST in Solid Media - Isoniazid (CB) | Value "1" = include Isoniazid (CB) in the list of drugs available for Subsequent Phenotypic DST testing in solid media. <br> Value "2" = exclude Isoniazid (CB) from the list of drugs available for Subsequent Phenotypic DST testing in solid media. | s8WPR943gGS |
-| TB-Drugs: Subsequent Phenotypic DST in Solid Media - Pyrazinamide | Value "1" = include Pyrazinamide in the list of drugs available for Subsequent Phenotypic DST testing in solid media. <br> Value "2" = exclude Pyrazinamide from the list of drugs available for Subsequent Phenotypic DST testing in solid media. <br> Pyrazinamide can only be tested using liquid media. | bHPYGfrFNV2 |
-| TB-Drugs: Subsequent Phenotypic DST in Solid Media - Ethambutol | Value "1" = include Ethambutol in the list of drugs available for Subsequent Phenotypic DST testing in solid media. <br> Value "2" = exclude Ethambutol from the list of drugs available for Subsequent Phenotypic DST testing in solid media. | wNxsAieLWYc |
-| TB-Drugs: Subsequent Phenotypic DST in Solid Media - Levofloxacin | Value "1" = include Levofloxacin in the list of drugs available for Subsequent Phenotypic DST testing in solid media. <br> Value "2" = exclude Levofloxacin from the list of drugs available for Subsequent Phenotypic DST testing in solid media. | Fw8wOlTETPt |
-| TB-Drugs: Subsequent Phenotypic DST in Solid Media - Moxifloxacin (CC) | Value "1" = include Moxifloxacin (CC) in the list of drugs available for Subsequent Phenotypic DST testing in solid media. <br> Value "2" = exclude Moxifloxacin (CC) from the list of drugs available for Subsequent Phenotypic DST testing in solid media. | Czx5FuOqF9i |
-| TB-Drugs: Subsequent Phenotypic DST in Solid Media - Moxifloxacin (CB) | Value "1" = include Moxifloxacin (CB) in the list of drugs available for Subsequent Phenotypic DST testing in solid media. <br> Value "2" = exclude Moxifloxacin (CB) from the list of drugs available for Subsequent Phenotypic DST testing in solid media. | NvA1K4hFJbc |
-| TB-Drugs: Subsequent Phenotypic DST in Solid Media - Amikacin | Value "1" = include Amikacin in the list of drugs available for Subsequent Phenotypic DST testing in solid media. <br> Value "2" = exclude Amikacin from the list of drugs available for Subsequent Phenotypic DST testing in solid media. | dTwKm1u2VhY |
-| TB-Drugs: Subsequent Phenotypic DST in Solid Media - Bedaquiline | Value "1" = include Bedaquiline in the list of drugs available for Subsequent Phenotypic DST testing in solid media. <br> Value "2" = exclude Bedaquiline from the list of drugs available for Subsequent Phenotypic DST testing in solid media. | r70ONQRhaHY |
-| TB-Drugs: Subsequent Phenotypic DST in Solid Media - Delamanid | Value "1" = include Delamanid in the list of drugs available for Subsequent Phenotypic DST testing in solid media. <br> Value "2" = exclude Delamanid from the list of drugs available for Subsequent Phenotypic DST testing in solid media. | RFqmLP5W5di |
-| TB-Drugs: Subsequent Phenotypic DST in Solid Media - Linezolid | Value "1" = include Linezolid in the list of drugs available for Subsequent Phenotypic DST testing in solid media. <br> Value "2" = exclude Linezolid from the list of drugs available for Subsequent Phenotypic DST testing in solid media. | KIeI2d8xalG |
-| TB-Drugs: Subsequent Phenotypic DST in Solid Media - Clofazimine | Value "1" = include Clofazimine in the list of drugs available for Subsequent Phenotypic DST testing in solid media. <br> Value "2" = exclude Clofazimine from the list of drugs available for Subsequent Phenotypic DST testing in solid media. <br> Clofazimine can only be tested using liquid media. | bywBn5DxVdi |
+| Subsequent Phenotypic DST in Solid Media - Rifampicin | Value "1" = include Rifampicin in the list of drugs available for Subsequent Phenotypic DST testing in solid media. <br> Value "0" = exclude Rifampicin from the list of drugs available for Subsequent Phenotypic DST testing in solid media. | zJoEjvstp2d |
+| Subsequent Phenotypic DST in Solid Media - Isoniazid (CC) | Value "1" = include Isoniazid (CC) in the list of drugs available for Subsequent Phenotypic DST testing in solid media. <br> Value "0" = exclude Isoniazid (CC) from the list of drugs available for Subsequent Phenotypic DST testing in solid media. | eM3UfUO7W8O |
+| Subsequent Phenotypic DST in Solid Media - Isoniazid (CB) | Value "1" = include Isoniazid (CB) in the list of drugs available for Subsequent Phenotypic DST testing in solid media. <br> Value "0" = exclude Isoniazid (CB) from the list of drugs available for Subsequent Phenotypic DST testing in solid media. | s8WPR943gGS |
+| Subsequent Phenotypic DST in Solid Media - Pyrazinamide | Value "1" = include Pyrazinamide in the list of drugs available for Subsequent Phenotypic DST testing in solid media. <br> Value "0" = exclude Pyrazinamide from the list of drugs available for Subsequent Phenotypic DST testing in solid media. <br> Pyrazinamide can only be tested using liquid media. | bHPYGfrFNV2 |
+| Subsequent Phenotypic DST in Solid Media - Ethambutol | Value "1" = include Ethambutol in the list of drugs available for Subsequent Phenotypic DST testing in solid media. <br> Value "0" = exclude Ethambutol from the list of drugs available for Subsequent Phenotypic DST testing in solid media. | wNxsAieLWYc |
+| Subsequent Phenotypic DST in Solid Media - Levofloxacin | Value "1" = include Levofloxacin in the list of drugs available for Subsequent Phenotypic DST testing in solid media. <br> Value "0" = exclude Levofloxacin from the list of drugs available for Subsequent Phenotypic DST testing in solid media. | Fw8wOlTETPt |
+| Subsequent Phenotypic DST in Solid Media - Moxifloxacin (CC) | Value "1" = include Moxifloxacin (CC) in the list of drugs available for Subsequent Phenotypic DST testing in solid media. <br> Value "0" = exclude Moxifloxacin (CC) from the list of drugs available for Subsequent Phenotypic DST testing in solid media. | Czx5FuOqF9i |
+| Subsequent Phenotypic DST in Solid Media - Moxifloxacin (CB) | Value "1" = include Moxifloxacin (CB) in the list of drugs available for Subsequent Phenotypic DST testing in solid media. <br> Value "0" = exclude Moxifloxacin (CB) from the list of drugs available for Subsequent Phenotypic DST testing in solid media. | NvA1K4hFJbc |
+| Subsequent Phenotypic DST in Solid Media - Amikacin | Value "1" = include Amikacin in the list of drugs available for Subsequent Phenotypic DST testing in solid media. <br> Value "0" = exclude Amikacin from the list of drugs available for Subsequent Phenotypic DST testing in solid media. | dTwKm1u2VhY |
+| Subsequent Phenotypic DST in Solid Media - Bedaquiline | Value "1" = include Bedaquiline in the list of drugs available for Subsequent Phenotypic DST testing in solid media. <br> Value "0" = exclude Bedaquiline from the list of drugs available for Subsequent Phenotypic DST testing in solid media. | r70ONQRhaHY |
+| Subsequent Phenotypic DST in Solid Media - Delamanid | Value "1" = include Delamanid in the list of drugs available for Subsequent Phenotypic DST testing in solid media. <br> Value "0" = exclude Delamanid from the list of drugs available for Subsequent Phenotypic DST testing in solid media. | RFqmLP5W5di |
+| Subsequent Phenotypic DST in Solid Media - Linezolid | Value "1" = include Linezolid in the list of drugs available for Subsequent Phenotypic DST testing in solid media. <br> Value "0" = exclude Linezolid from the list of drugs available for Subsequent Phenotypic DST testing in solid media. | KIeI2d8xalG |
+| Subsequent Phenotypic DST in Solid Media - Clofazimine | Value "1" = include Clofazimine in the list of drugs available for Subsequent Phenotypic DST testing in solid media. <br> Value "0" = exclude Clofazimine from the list of drugs available for Subsequent Phenotypic DST testing in solid media. <br> Clofazimine can only be tested using liquid media. | bywBn5DxVdi |
 
 | Subsequent Phenotypic DST in Liquid Media (eg. MGIT) |||
 |---|---|---|
-| TB-Drugs: Subsequent Phenotypic DST in Liquid Media - Rifampicin | Value "1" = include Rifampicin in the list of drugs available for Subsequent Phenotypic DST testing in liquid media. <br> Value "2" = exclude Rifampicin from the list of drugs available for Subsequent Phenotypic DST testing in liquid media. | lelJEADYpeI |
-| TB-Drugs: Subsequent Phenotypic DST in Liquid Media - Isoniazid (CC) | Value "1" = include Isoniazid (CC) in the list of drugs available for Subsequent Phenotypic DST testing in liquid media. <br> Value "2" = exclude Isoniazid (CC) from the list of drugs available for Subsequent Phenotypic DST testing in liquid media. | ZBpqH7xJLBO |
-| TB-Drugs: Subsequent Phenotypic DST in Liquid Media - Isoniazid (CB) | Value "1" = include Isoniazid (CB) in the list of drugs available for Subsequent Phenotypic DST testing in liquid media. <br> Value "2" = exclude Isoniazid (CB) from the list of drugs available for Subsequent Phenotypic DST testing in liquid media. | F9DTb5zl8rS |
-| TB-Drugs: Subsequent Phenotypic DST in Liquid Media - Pyrazinamide | Value "1" = include Pyrazinamide in the list of drugs available for Subsequent Phenotypic DST testing in liquid media. <br> Value "2" = exclude Pyrazinamide from the list of drugs available for Subsequent Phenotypic DST testing in liquid media. | VY15auehssY |
-| TB-Drugs: Subsequent Phenotypic DST in Liquid Media - Ethambutol | Value "1" = include Ethambutol in the list of drugs available for Subsequent Phenotypic DST testing in liquid media. <br> Value "2" = exclude Ethambutol from the list of drugs available for Subsequent Phenotypic DST testing in liquid media. | Ic5asMdbpH8 |
-| TB-Drugs: Subsequent Phenotypic DST in Liquid Media - Levofloxacin | Value "1" = include Levofloxacin in the list of drugs available for Subsequent Phenotypic DST testing in liquid media. <br> Value "2" = exclude Levofloxacin from the list of drugs available for Subsequent Phenotypic DST testing in liquid media. | b1KgVOel21P |
-| TB-Drugs: Subsequent Phenotypic DST in Liquid Media - Moxifloxacin (CC) | Value "1" = include Moxifloxacin (CC) in the list of drugs available for Subsequent Phenotypic DST testing in liquid media. <br> Value "2" = exclude Moxifloxacin (CC) from the list of drugs available for Subsequent Phenotypic DST testing in liquid media. | HhKitGif8RV |
-| TB-Drugs: Subsequent Phenotypic DST in Liquid Media - Moxifloxacin (CB) | Value "1" = include Moxifloxacin (CB) in the list of drugs available for Subsequent Phenotypic DST testing in liquid media. <br> Value "2" = exclude Moxifloxacin (CB) from the list of drugs available for Subsequent Phenotypic DST testing in liquid media. | xfltmyqC3p0 |
-| TB-Drugs: Subsequent Phenotypic DST in Liquid Media - Amikacin | Value "1" = include Amikacin in the list of drugs available for Subsequent Phenotypic DST testing in liquid media. <br> Value "2" = exclude Amikacin from the list of drugs available for Subsequent Phenotypic DST testing in liquid media. | a4PpEfSutcV |
-| TB-Drugs: Subsequent Phenotypic DST in Liquid Media - Bedaquiline | Value "1" = include Bedaquiline in the list of drugs available for Subsequent Phenotypic DST testing in liquid media. <br> Value "2" = exclude Bedaquiline from the list of drugs available for Subsequent Phenotypic DST testing in liquid media. | QaioqMbO0TX |
-| TB-Drugs: Subsequent Phenotypic DST in Liquid Media - Delamanid | Value "1" = include Delamanid in the list of drugs available for Subsequent Phenotypic DST testing in liquid media. <br> Value "2" = exclude Delamanid from the list of drugs available for Subsequent Phenotypic DST testing in liquid media. | Xt5GU9kBD7q |
-| TB-Drugs: Subsequent Phenotypic DST in Liquid Media - Linezolid | Value "1" = include Linezolid in the list of drugs available for Subsequent Phenotypic DST testing in liquid media. <br> Value "2" = exclude Linezolid from the list of drugs available for Subsequent Phenotypic DST testing in liquid media. | mU5iEABeF2K |
-| TB-Drugs: Subsequent Phenotypic DST in Liquid Media - Clofazimine | Value "1" = include Clofazimine in the list of drugs available for Subsequent Phenotypic DST testing in liquid media. <br> Value "2" = exclude Clofazimine from the list of drugs available for Subsequent Phenotypic DST testing in liquid media. | Nb6oHqjCCZq |
+| Subsequent Phenotypic DST in Liquid Media - Rifampicin | Value "1" = include Rifampicin in the list of drugs available for Subsequent Phenotypic DST testing in liquid media. <br> Value "0" = exclude Rifampicin from the list of drugs available for Subsequent Phenotypic DST testing in liquid media. | lelJEADYpeI |
+| Subsequent Phenotypic DST in Liquid Media - Isoniazid (CC) | Value "1" = include Isoniazid (CC) in the list of drugs available for Subsequent Phenotypic DST testing in liquid media. <br> Value "0" = exclude Isoniazid (CC) from the list of drugs available for Subsequent Phenotypic DST testing in liquid media. | ZBpqH7xJLBO |
+| Subsequent Phenotypic DST in Liquid Media - Isoniazid (CB) | Value "1" = include Isoniazid (CB) in the list of drugs available for Subsequent Phenotypic DST testing in liquid media. <br> Value "0" = exclude Isoniazid (CB) from the list of drugs available for Subsequent Phenotypic DST testing in liquid media. | F9DTb5zl8rS |
+| Subsequent Phenotypic DST in Liquid Media - Pyrazinamide | Value "1" = include Pyrazinamide in the list of drugs available for Subsequent Phenotypic DST testing in liquid media. <br> Value "0" = exclude Pyrazinamide from the list of drugs available for Subsequent Phenotypic DST testing in liquid media. | VY15auehssY |
+| Subsequent Phenotypic DST in Liquid Media - Ethambutol | Value "1" = include Ethambutol in the list of drugs available for Subsequent Phenotypic DST testing in liquid media. <br> Value "0" = exclude Ethambutol from the list of drugs available for Subsequent Phenotypic DST testing in liquid media. | Ic5asMdbpH8 |
+| Subsequent Phenotypic DST in Liquid Media - Levofloxacin | Value "1" = include Levofloxacin in the list of drugs available for Subsequent Phenotypic DST testing in liquid media. <br> Value "0" = exclude Levofloxacin from the list of drugs available for Subsequent Phenotypic DST testing in liquid media. | b1KgVOel21P |
+| Subsequent Phenotypic DST in Liquid Media - Moxifloxacin (CC) | Value "1" = include Moxifloxacin (CC) in the list of drugs available for Subsequent Phenotypic DST testing in liquid media. <br> Value "0" = exclude Moxifloxacin (CC) from the list of drugs available for Subsequent Phenotypic DST testing in liquid media. | HhKitGif8RV |
+| Subsequent Phenotypic DST in Liquid Media - Moxifloxacin (CB) | Value "1" = include Moxifloxacin (CB) in the list of drugs available for Subsequent Phenotypic DST testing in liquid media. <br> Value "0" = exclude Moxifloxacin (CB) from the list of drugs available for Subsequent Phenotypic DST testing in liquid media. | xfltmyqC3p0 |
+| Subsequent Phenotypic DST in Liquid Media - Amikacin | Value "1" = include Amikacin in the list of drugs available for Subsequent Phenotypic DST testing in liquid media. <br> Value "0" = exclude Amikacin from the list of drugs available for Subsequent Phenotypic DST testing in liquid media. | a4PpEfSutcV |
+| Subsequent Phenotypic DST in Liquid Media - Bedaquiline | Value "1" = include Bedaquiline in the list of drugs available for Subsequent Phenotypic DST testing in liquid media. <br> Value "0" = exclude Bedaquiline from the list of drugs available for Subsequent Phenotypic DST testing in liquid media. | QaioqMbO0TX |
+| Subsequent Phenotypic DST in Liquid Media - Delamanid | Value "1" = include Delamanid in the list of drugs available for Subsequent Phenotypic DST testing in liquid media. <br> Value "0" = exclude Delamanid from the list of drugs available for Subsequent Phenotypic DST testing in liquid media. | Xt5GU9kBD7q |
+| Subsequent Phenotypic DST in Liquid Media - Linezolid | Value "1" = include Linezolid in the list of drugs available for Subsequent Phenotypic DST testing in liquid media. <br> Value "0" = exclude Linezolid from the list of drugs available for Subsequent Phenotypic DST testing in liquid media. | mU5iEABeF2K |
+| Subsequent Phenotypic DST in Liquid Media - Clofazimine | Value "1" = include Clofazimine in the list of drugs available for Subsequent Phenotypic DST testing in liquid media. <br> Value "0" = exclude Clofazimine from the list of drugs available for Subsequent Phenotypic DST testing in liquid media. | Nb6oHqjCCZq |
 
 | LPA (Fluoroquinolones / Second-line Injectables) |||
 |---|---|---|
-| TB-Drugs: LPA (Fq/2Li) - Ethambutol | Value "1" = include Ethambutol Result in LPA (Fq/2LI) Test. <br> Value "2" = exclude Ethambutol Result from LPA (Fq/2LI) Test. | AiyTLOJHMkl |
+| LPA (Fq/2Li) - Ethambutol | Value "1" = include Ethambutol Result in LPA (Fq/2LI) Test. <br> Value "0" = exclude Ethambutol Result from LPA (Fq/2LI) Test. | AiyTLOJHMkl |
 
 ### Top Bar Widget
 
 The top bar widget within the Tracker Capture app is useful for the data entry user to have a snapshot overview of information about the TEI (case) every time the TEI enrollment is opened for this program.
 
-The table below summarizes program indicators and variables displayed in the Top Bar Widget and how they are calculated. “Type” refers to whether a particular variable is configured as a program indicator with the “display in form” option enabled, or if it is calculated and displayed using program rules.
+The table below summarizes program indicators and variables displayed in the Top Bar Widget and how they are calculated. "Type" refers to whether a particular variable is configured as a program indicator with the "display in form" option enabled, or if it is calculated and displayed using program rules.
 
 | Variable | Type | Calculation |
 |---|---|---|
-| Current age (years) | Program indicator | Number of years between current date and the “Date of birth (age)” tracked entity attribute. |
+| Current age (years) | Program indicator | Number of years between current date and the "Date of birth (age)" tracked entity attribute. |
 | Treatment history | Program rule | History of previous treatment based on Case Report Form (New/Previously treated) |
 | Resistance (Rif, Inh, Fq) | Program rule | Lists the drugs for which drug resistance have been detected and recorded in the NRL - DRS Samples 1-4 stages |
 
@@ -424,6 +424,19 @@ The following feedback messages are configured to display in the Feedback Widget
 | You entered a laboratory result before the date of inoculation. Laboratory result date must be on or after inoculation date. Please check both dates. | **Error:** Date of laboratory result precedes the date of inoculation |
 | Answer "Yes" has been assigned automatically. The patient is either registered for TB treatment already and/or has confirmed previous treatment for TB. | **Warning:** The previous treatment history status is assgned automatically based on the answers in the Case Report Form |
 | If initial screening is based on microscopy examination of > 2 samples then add only the 2 samples with the highest bacterial load. | **Warning:** User can only add screening data from two samples only |
+
+### Validation
+
+The data entry forms contain several date validation checks. These include:
+
+- Date of HIV status cannot be prior to Date of birth
+- Date of previous treatment initiation cannot be prior to Date of birth
+- Test result dates for Culture and DST cannot be prior to inoculation dates
+- Test dates cannot precede sample collection dates
+- Sample shipment date cannot precede sample collection date
+- Sample arrival date cannot precede shipment date
+
+Additional validation checks can be set up.
 
 ### Analytics and Indicators
 
@@ -529,9 +542,9 @@ If a country is not using certain tests from the list at NRLs, the corresponding
 
 The following user groups are included in the TB DRS Module:
 
-- TB DRS Admin: can edit/view metadata; no access to data [all program stages]
-- TB DRS Data capture: can view metadata, can capture data [all program stages]
-- TB DRS Access: cam view metadata, can view data [all program stages]
+- DRS - Admin: can edit/view metadata; no access to data [all program stages]
+- DRS - Data capture: can view metadata, can capture data [all program stages]
+- DRS - Access: can view metadata, can view data [all program stages]
 
 ## References
 
