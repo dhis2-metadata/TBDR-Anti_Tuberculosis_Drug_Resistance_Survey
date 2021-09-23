@@ -1,4 +1,4 @@
-# WHO Anti-Tuberculosis Drugs Resistance Survey (DRS) - Tracker Installation Guide
+# WHO Anti-Tuberculosis Drugs Resistance Survey (DRS) - Tracker Installation Guide { #drs-installation }
 
 Package Version 1.0.0
 
