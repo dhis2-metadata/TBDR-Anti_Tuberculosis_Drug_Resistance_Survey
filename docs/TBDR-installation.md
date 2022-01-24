@@ -46,13 +46,7 @@ The package metadata json files contain a "package" component that provides tech
     }
     ```
 
-The Anti-Tuberculosis Drugs Resistance Survey tracker package was developed in DHIS2.33. If you are setting this module in a new instance, it is recommended to use later versions of DHIS2 Please refer to the [DHIS2 installation guide](https://docs.dhis2.org/en/manage/performing-system-administration/dhis-core-version-master/installation.html).
-
-This document covers the installation of the following packages:
-
-1. WHO Anti-Tuberculosis Drugs Resistance Survey (DRS)
-
-You will have to follow the instructions to ensure that the package is installed and configured correctly.
+When importing this package into a new/blank instance, please refer to the [DHIS2 installation guide](https://docs.dhis2.org/master/en/dhis2_system_administration_guide/installation.html).
 
 ## Installation
 
