@@ -1,10 +1,50 @@
 # WHO Anti-Tuberculosis Drugs Resistance Survey (DRS) - Tracker Installation Guide { #drs-installation }
 
-Package Version 1.0.0
+Package Version 1.0.1
 
-DHIS2 Version compatibility 2.33 and above
+System default language: English
+
+Available translations: French, Spanish, Portuguese
 
 ## Overview
+
+The package metadata json files contain a "package" component that provides technical details on package version and content. The files available in the current version of the package are listed below.
+
+### DHIS2.35
+
+=== "Complete Package"
+
+    ```json
+    "package": {
+        "DHIS2Build": "35d663a",
+        "DHIS2Version": "2.35.11",
+        "code": "TBDR00",
+        "description": "Anti-Tuberculosis Drug Resistance Survey (DRS)",
+        "lastUpdated": "20220124T083253",
+        "locale": "en",
+        "name": "TB_DRS_TKR_1.0.1_DHIS2.35.11-en",
+        "type": "TKR",
+        "version": "1.0.1"
+    }
+    ```
+
+### DHIS2.36
+
+=== "Complete Package"
+
+    ```json
+    "package": {
+        "DHIS2Build": "5d136cb",
+        "DHIS2Version": "2.36.6",
+        "code": "TBDR00",
+        "description": "Anti-Tuberculosis Drug Resistance Survey (DRS)",
+        "lastUpdated": "20220124T073407",
+        "locale": "en",
+        "name": "TB_DRS_TKR_1.0.1_DHIS2.36.6-en",
+        "type": "TKR",
+        "version": "1.0.1"
+    }
+    ```
 
 The Anti-Tuberculosis Drugs Resistance Survey tracker package was developed in DHIS2.33. If you are setting this module in a new instance, it is recommended to use later versions of DHIS2 Please refer to the [DHIS2 installation guide](https://docs.dhis2.org/en/manage/performing-system-administration/dhis-core-version-master/installation.html).
 
@@ -37,62 +77,98 @@ Great care should be taken to ensure that the server itself and the DHIS2 applic
 
 While not always necessary, it can often be advantageous to make certain modifications to the metadata file before importing it into DHIS2.
 
-### Default data dimension (if applicable)
+### Default data dimension
 
-In early versions of DHIS2, the UID of the default data dimension was auto-generated. Thus, while all DHIS2 instances have a default category option, data element category, category combination and category option combination, the UIDs of these defaults can be different. Later versions of DHIS2 have hardcoded UIDs for the default dimension, and these UIDs are used in the configuration packages.
+In early versions of DHIS2, the UIDs of the default data dimensions were auto-generated. Thus, while all DHIS2 instances have a default category option, data element category, category combination and category option combination, the UIDs of these defaults can be different. Later versions of DHIS2 have hardcoded UIDs for the default dimension, and these UIDs are used in the configuration packages.
 
-To avoid conflicts when importing the metadata, it is advisable to search and replace the entire .json file for all occurrences of these default objects, replacing UIDs of the .json file with the UIDs of the database in which the file will be imported. Table 1 shows the UIDs which should be replaced, as well as the API endpoints to identify the existing UIDs.
+To avoid conflicts when importing the metadata, it is advisable to search and replace the entire .json file for all occurrences of these default objects, replacing UIDs of the .json file with the UIDs from the instance in which the file will be imported. Table 1 shows the UIDs which should be replaced, as well as the API endpoints to identify the existing UIDs
 
-|Object|UID|API endpoint|
-|:--|:--|:--|
-|Category|GLevLNI9wkl|`../api/categories.json?filter=name:eq:default`|
-|Category option|xYerKDKCefk|`../api/categoryOptions.json?filter=name:eq:default`|
-|Category combination|bjDvmb4bfuf|`../api/categoryCombos.json?filter=name:eq:default`|
-|Category option combination|HllvX50cXC0|`../api/categoryOptionCombos.json?filter=name:eq:default`|
+| Object                      | UID           | API endpoint                                              |
+|-----------------------------|---------------|-----------------------------------------------------------|
+| Category                    | `GLevLNI9wkl` | `../api/categories.json?filter=name:eq:default`           |
+| Category option             | `xYerKDKCefk` | `../api/categoryOptions.json?filter=name:eq:default`      |
+| Category combination        | `bjDvmb4bfuf` | `../api/categoryCombos.json?filter=name:eq:default`       |
+| Category option combination | `HllvX50cXC0` | `../api/categoryOptionCombos.json?filter=name:eq:default` |
 
-For example, if importing a configuration package into <https://play.dhis2.org/demo>, the UID of the default category option combination could be identified through <https://play.dhis2.org/demo/api/categoryOptionCombos.json?filter=name:eq:default> as bRowv6yZOF2.
+Identify the UIDs of the default dimesions in your instance using the listed API requests and replace the UIDs in the json file with the UIDs from the instance.
 
-You could then search and replace all occurrences of HllvX50cXC0 with bRowv6yZOF2 in the .json file, as that is the ID of default in the system you are importing into. **_Note that this search and replace operation must be done with a plain text editor_**, not a word processor like Microsoft Word.
+> **NOTE**
+>
+> Note that this search and replace operation must be done with a plain text editor, not a word processor like Microsoft Word.
 
 ### Indicator types
 
-Indicator type is another type of object that can create import conflict because certain names are used in different DHIS2 databases (.e.g "Percentage"). Since Indicator types are defined simply by their factor and whether or not they are simple numbers without a denominator, they are unambiguous and can be replaced through a search and replace of the UIDs. This avoids potential import conflicts, and avoids creating duplicate indicator types. Table 2 shows the UIDs which could be replaced, as well as the API endpoints to identify the existing UIDs
+Indicator type is another type of object that can create import conflict because certain names are used in different DHIS2 databases (.e.g "Percentage"). Since Indicator types are defined by their factor (including 1 for "numerator only" indicators), they are unambiguous and can be replaced through a search and replace of the UIDs. This method helps avoid potential import conflicts, and prevents the implementer from creating duplicate indicator types. The table below contains the UIDs which could be replaced, as well as the API endpoints to identify the existing UIDs:
 
-|Object|UID|API endpoint|
-|:--|:--|:--|
-|Percentage|hmSnCXmLYwt|`../api/indicatorTypes.json?filter=number:eq:false&filter=factor:eq:100`|
+|Object                  | UID           | API endpoint                                                          |
+|------------------------|---------------|-----------------------------------------------------------------------|
+| Numerator only (number)| `CqNPn5KzksS` | `../api/indicatorTypes.json?filter=number:eq:true&filter=factor:eq:1` |
 
 ### Tracked Entity Type
 
-Like indicator types, you may have already existing tracked entity types in your DHIS2 database. The references to the tracked entity type should be changed to reflect what is in your system so you do not create duplicates. Table 3 shows the UIDs which could be replaced, as well as the API endpoints to identify the existing UIDs
+Like indicator types, you may have already existing tracked entity types in your DHIS2 database. The references to the tracked entity type should be changed to reflect what is in your system so you do not create duplicates. The table below contains the UIDs which could be replaced, as well as the API endpoints to identify the existing UIDs:
 
-|Object|UID|API endpoint|
-|:--|:--|:--|
-|Person|MCPQUTHX1Ze|`../api/trackedEntityTypes.json?filter=name:eq:Person`|
+|Object  | UID           | API endpoint                                           |
+|------------------------|---------------|----------------------------------------|
+| Person | `MCPQUTHX1Ze` | `../api/trackedEntityTypes.json?filter=name:eq:Person` |
+
+### Sort order for options
+
+Check whether the sort order `sortOrder` of options in your system matches the sort order of options included in the metadata package. This only applies when the json file and the target instance contain options and option sets with the same UID.
+
+After import, make sure that the sort order for options within an option set starts at 1. There should be no gaps (eg. 1,2,3,5,6) in the sort order values.
+
+Sort order can be adjusted in the Maintenance app.
+
+1. Go to the applicable Option Set
+2. Open the "Options" section
+3. Use "SORT BY NAME", "SORT BY CODE/VALUE" or "SORT MANUALLY" alternatives.
+
+### Dashboards and visualizations
+
+The dashboards and visualizations in each dashboard cannot be hidden/unhidden by constants. Therefore the unapplicable dashboards/visualizations have to be manually removed during package installation based on the selection of tests/drugs.
+
+Visualizations in the metadata file may contain a placeholder <OU_ROOT_UID>. This placeholder in the metadata.json file has to be replaced by the Root Organisation unit UID from the target instance before the package can be imported.
+
+Some visualizations and maps may contain references to organisation unit levels. Maps that consist of several map views may contain vaious Organisation unit level references based on the configuration of the map layer. The table below provides an overview of such items included in the package. Adjust the organisation unit level references in the metadata json file to match the organisation unit structure in the target instance before importing the metadata file.
+
+Example:
+
+| UID           | Name                                                                    | Type                        | Organisation unit levels  | Mapping guidance                    |
+|---------------|-------------------------------------------------------------------------|-----------------------------|---------------------------|-------------------------------------|
+| `vgIrIjzONuV` | Patients with Inh-resistant and Rif-susceptible TB (by health facility) | map (mapview)               | 3,2                       | District, Region                    |
+| `vgIrIjzONuV` | Patients with Inh-resistant and Rif-susceptible TB (by health facility) | map (mapview)               | 4                         | Facility                            |
+| `JUbkmvmNxbB` | RR-TB patients (by health facility)                                     | map (mapview)               | 3,2                       | District, Region                    |
+| `JUbkmvmNxbB` | RR-TB patients (by health facility)                                     | map (mapview)               | 4                         | Facility                            |
+| `u4FxBzXoiml` | RR-TB patients resistant to Fq (by health facility)                     | map (mapview)               | 3,2                       | District, Region                    |
+| `u4FxBzXoiml` | RR-TB patients resistant to Fq (by health facility)                     | map (mapview)               | 4                         | Facility                            |
+| `CrxqCiQyhay` | Enrolled patients by facility (cumulative)                              | visualization (pivot table) | 4                         | Facility                            |
+| `PazB6GSITwK` | Missing data report                                                     | visualization (pivot table) | 4                         | Facility                            |
+| `GinRhTtdKnI` | Percentage of samples rejected on arrival at NTRL                       | visualization (pivot table) | 1,2,3,4                   | Country, Region, District, Facility |
 
 ## Importing metadata
 
-The .json metadata file is imported through the [Import/Export](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-master/maintaining-the-system/importexport-app.html) app of DHIS2. It is advisable to use the "dry run" feature to identify issues before attempting to do an actual import of the metadata. If "dry run" reports any issues or conflicts, see the [import conflicts](#handling-import-conflicts) section below.
-
-If the "dry run"/"validate" import works without error, attempt to import the metadata. If the import succeeds without any errors, you can proceed to [configure](#additional-configuration) the module. In some cases, import conflicts or issues are not shown during the "dry run", but appear when the actual import is attempted. In this case, the import summary will list any errors that need to be resolved.
+Use [Import/Export](#import_export) DHIS2 app to import metadata packages. It is advisable to use the "dry run" feature to identify issues before attempting to do an actual import of the metadata. If "dry run" reports any issues or conflicts, see the [import conflicts](#handling-import-conflicts) section below. If the "dry run"/"validate" import works without error, attempt to import the metadata. If the import succeeds without any errors, you can proceed to [configuring](#configuration) the module. In some cases, import conflicts or issues are not shown during the "dry run", but appear when the actual import is attempted. In this case, the import summary will list any errors that need to be resolved.
 
 ### Handling import conflicts
 
-**NOTE:** If you are importing into a new DHIS2 instance, you will not have to worry about import conflicts, as there is nothing in the database you are importing to to conflict with. Follow the instructions to import the metadata then please proceed to the “[Additional configuration](#additional-configuration)” section.
+> **NOTE**
+>
+> If you are importing the package into a new DHIS2 instance, you will not experience import conflicts, as there is no metadata in the target database. After import the metadata, proceed to the “[Configuration](#configuration)” section.
 
-There are a number of different conflicts that may occur, though the most common is that there are metadata objects in the configuration package with a name, shortname and/or code that already exists in the target database. There are a couple of alternative solutions to these problems, with different advantages and disadvantages. Which one is more appropriate will depend, for example, on the type of object for which a conflict occurs.
+There are a number of different conflicts that may occur, though the most common is that there are metadata objects in the configuration package with a name, shortname and/or code that already exist in the target database. There are a couple of alternative solutions to these problems, with different advantages and disadvantages. Which one is more appropriate will depend, for example, on the type of object for which a conflict occurs.
 
-**_Alternative 1_**
+#### Alternative 1
 
-Rename the existing object in your DHIS2 database for which there is a conflict. The advantage of this approach is that there is no need to modify the .json file, as changes are instead done through the user interface of DHIS2. This is likely to be less error prone. It also means that the configuration package is left as is, which can be an advantage for example when training material and documentation based on the configuration package will be used.
+Rename the existing object in your DHIS2 database for which there is a conflict. The advantage of this approach is that there is no need to modify the .json file, as changes are instead done through the user interface of DHIS2. This is likely to be less error prone. It also means that the configuration package is left as is, which can be an advantage for example when updates to the package are released. The original package objects are also often referenced in training materials and documentation.
 
-**_Alternative 2_**
+#### Alternative 2
 
 Rename the object for which there is a conflict in the .json file. The advantage of this approach is that the existing DHIS2 metadata is left as-is. This can be a factor when there is training material or documentation such as SOPs of data dictionaries linked to the object in question, and it does not involve any risk of confusing users by modifying the metadata they are familiar with.
 
 Note that for both alternative 1 and 2, the modification can be as simple as adding a small pre/post-fix to the name, to minimise the risk of confusion.
 
-**_Alternative 3_**
+#### Alternative 3
 
 A third and more complicated approach is to modify the .json file to re-use existing metadata. For example, in cases where an option set already exists for a certain concept (e.g. "sex"), that option set could be removed from the .json file and all references to its UID replaced with the corresponding option set already in the database. The big advantage of this (which is not limited to the cases where there is a direct import conflict) is to avoid creating duplicate metadata in the database. There are some key considerations to make when performing this type of modification:
 
@@ -131,7 +207,7 @@ By default the following is assigned to these user groups
 
 You will want to assign your users to the appropriate user group based on their role within the system. You may want to enable sharing for other objects in the package depending on your set up. Refer to the [DHIS2 Documentation](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-master/configuring-the-system/about-sharing-of-objects.html) for more information on configuring sharing.
 
-### User Roles
+### User roles
 
 Users will need user roles in order to engage with the various applications within DHIS2. The following minimum roles are recommended:
 
@@ -140,17 +216,20 @@ Users will need user roles in order to engage with the various applications with
 
 Refer to the [DHIS2 Documentation](https://docs.dhis2.org/) for more information on configuring user roles.
 
-### Organisation Units
+### Organisation units
 
-You must assign the program to organisation units within your own hierarchy in order to be able to see the program in tracker capture.
+The program and the data sets must be assigned to organisation units within existing hierarchy in order to be accessible via tracker capture/capture apps.
 
 ### Duplicated metadata
 
-**NOTE:** This section only applies if you are importing into a DHIS2 database in which there is already meta-data present. If you are working with a new DHIS2 instance, you may skip this section.
+> **NOTE**
+>
+> This section only applies if you are importing into a DHIS2 database in which there is already meta-data present. If you are working with a new DHIS2 instance, please skip this section and go to [Adapting the tracker program](#adapting-the-program).
+> If you are using any third party applications that rely on the current metadata, please take into account that this update could break them.
 
 Even when metadata has been successfully imported without any import conflicts, there can be duplicates in the metadata - data elements, tracked entity attributes or option sets that already exist. As was noted in the section above on resolving conflict, an important issue to keep in mind is that decisions on making changes to the metadata in DHIS2 also needs to take into account other documents and resources that are in different ways associated with both the existing metadata, and the metadata that has been imported through the configuration package. Resolving duplicates is thus not only a matter of "cleaning up the database", but also making sure that this is done without, for example, breaking potential integrating with other systems, the possibility to use training material, breaking SOPs etc. This will very much be context-dependent.
 
-One important thing to keep in mind is that DHIS2 has tools that can hide some of the complexities of potential duplications in metadata. For example, where duplicate option sets exist, they can be hidden for groups of users through [sharing](https://docs.dhis2.org/en/use/user-guides/dhis-core-version-master/configuring-the-system/about-sharing-of-objects.html).
+One important thing to keep in mind is that DHIS2 has tools that can hide some of the complexities of potential duplications in metadata. For example, where duplicate option sets exist, they can be hidden for groups of users through [sharing](#sharing).
 
 ### Constants
 
@@ -282,22 +361,6 @@ Configure whether the country has an option of sending samples to SRL (supranati
 
 Please note, that the constants help to hide certain sections and data element from the data entry without the need to delete them from the system/metadata.json file. However, the elements are still assigned to the program and will be included when exporting all data into  eg. csv files.
 
-### Dashboards and visualizations
-
-The dashboards and visualizations in each dashboard cannot be hidden/unhidden by constants. Therefore the unapplicable dashboards/visualizations have to be manually removed during package installation based on the selection of tests/drugs.
-
-Some report tables are using Organisation Unit Levels in the configuration. These are dependent on the ROOT Organisation Unit.
-The following report tables contain a placeholder <OU_ROOT_UID>
-This placeholder has to be replaced by the ROOT Organisation unit UID in the metadata.json file before the package can be imported.
-
-```json
-    ../api/reportTables/CrxqCiQyhay
-
-    ../api/reportTables/PazB6GSITwK
-
-    ../api/reportTables/GinRhTtdKnI
-```
-
 ### Configuring tracker capture interface, widgets and top bar
 
 You must configure tracker capture dashboard after the package has been installed. This configuration includes data entry forms, widgets and top bar.
@@ -322,10 +385,10 @@ You must configure tracker capture dashboard after the package has been installe
 | **Indicators** |  |
 | DRS ID (Attribute) | 1 |
 | DRS ID (concatenated) | 2 |
-|Patient's age (months)| 3 |
-|Patient's age (years) | 4 |
+| Patient's age (months)| 3 |
+| Patient's age (years) | 4 |
 | Treatment History | 6 |
-|Resistance | 7 |
+| Resistance | 7 |
 
 * Click **Save**
 * Return to the **Settings** menu. Click **Saved dashboard layout as default**. Lock layout for all users.
