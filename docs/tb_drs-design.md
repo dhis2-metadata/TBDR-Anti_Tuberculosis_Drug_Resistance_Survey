@@ -1,4 +1,4 @@
-# WHO Anti-Tuberculosis Drugs Resistance Survey (DRS) - Tracker System Design { #drs-design }
+# WHO Anti-Tuberculosis Drugs Resistance Survey (DRS) - Tracker System Design { #tb-drs-design }
 
 ## Summary
 
